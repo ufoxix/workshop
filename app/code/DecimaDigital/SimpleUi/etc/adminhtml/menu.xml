@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="DecimaDigital_SimpleUi::magento_ui_app" title="Ui Component App" module="DecimaDigital_SimpleUi" translate="title" parent="DecimaDigital_Base::magento_base_app" resource="DecimaDigital_SimpleUi::magento_ui_app"/>
+        <add id="DecimaDigital_SimpleUi::magento_simple_ui_app" title="Simple Ui App" module="DecimaDigital_SimpleUi" sortOrder="10" translate="title" action="dd_simple/manage" parent="DecimaDigital_SimpleUi::magento_ui_app" resource="DecimaDigital_SimpleUi::magento_simple_ui_app"/>
+    </menu>
+</config>
