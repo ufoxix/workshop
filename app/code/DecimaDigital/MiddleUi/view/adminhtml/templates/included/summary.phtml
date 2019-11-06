@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Backend\Block\Template;
+use DecimaDigital\MiddleUi\ViewModel\Data\CustomData;
+
+/** @var Template $block */
+/** @var CustomData $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<?php if (!empty($viewModel->getAllEntityData())) : ?>
+<?php foreach ($viewModel->getAllEntityData() as $data) : ?>
+<section class="admin__page-section">
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item">
+            <div class="admin__page-section-item-content">
+                <h4 style="width: 75%;background:#6f8992;padding: 10px 0;margin-bottom: 0;">
+                    <span style="padding-left: 10px;color: #fff;">Summary Information #<?= $block->escapeHtml(__($data['entity_id']))?></span>
+                </h4>
+                <table style="width:75%;" class="admin__table-secondary subscription-account-information-table">
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Name')); ?></th>
+                            <td>
+                                <span>
+                                    <?= $block->escapeHtml(__($data['name'])) ?>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Description')); ?></th>
+                            <td>
+                                <span>
+                                    <?= $block->escapeHtml(__($data['description'])) ?>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><?= $block->escapeHtml(__('Created At')); ?></th>
+                            <td>
+                                <span>
+                                    <?= $block->escapeHtml($data['created_at']); ?>
+                                </span>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endforeach;?>
+<?php else : ?>
+<div>
+    <p><?= $block->escapeHtml(__('Included Information not found.')); ?></p>
+</div>
+<?php endif;?>
