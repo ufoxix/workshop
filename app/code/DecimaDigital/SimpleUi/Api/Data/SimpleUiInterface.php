@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace DecimaDigital\SimpleUi\Api\Data;
 
-use Magento\Tests\NamingConvention\true\string;
-
 /**
  * Interface SimpleUiInterface
  *
