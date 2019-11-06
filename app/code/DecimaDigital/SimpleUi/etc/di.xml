@@ -10,4 +10,17 @@
     <preference for="DecimaDigital\SimpleUi\Api\Data\SimpleUiInterface" type="DecimaDigital\SimpleUi\Model\SimpleUi"/>
     <preference for="DecimaDigital\SimpleUi\Api\SimpleUiRepositoryInterface" type="DecimaDigital\SimpleUi\Model\SimpleUiRepository"/>
     <preference for="DecimaDigital\SimpleUi\Api\Data\SimpleUiSearchResultInterface" type="DecimaDigital\SimpleUi\Model\SimpleUiSearchResults"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dd_simple_manage_listing_data_source" xsi:type="string">DecimaDigital\SimpleUi\Model\ResourceModel\SimpleUi\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="DecimaDigital\SimpleUi\Model\ResourceModel\SimpleUi\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">dd_simple_ui</argument>
+            <argument name="resourceModel" xsi:type="string">DecimaDigital\SimpleUi\Model\ResourceModel\SimpleUi\Collection</argument>
+        </arguments>
+    </virtualType>
 </config>

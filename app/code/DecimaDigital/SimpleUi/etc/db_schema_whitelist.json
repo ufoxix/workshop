@@ -1,0 +1,14 @@
+{
+    "dd_simple_ui": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "description": true,
+            "is_active": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
