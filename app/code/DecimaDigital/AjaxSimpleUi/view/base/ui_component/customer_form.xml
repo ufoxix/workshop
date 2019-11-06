@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="simple_ui_information">
+        <settings>
+            <dataScope>dd_ajax_manage</dataScope>
+            <label translate="true">Ajax SimpleUi</label>
+            <componentType>fieldset</componentType>
+            <additionalClasses>
+                <class name="ajax-simple-ui-form">true</class>
+            </additionalClasses>
+        </settings>
+        <button name="add_dd_ajax_manage_button" component="DecimaDigital_AjaxSimpleUi/js/component/add">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="formElement" xsi:type="string">container</item>
+                    <item name="buttonClasses" xsi:type="string">add-new-ajax-ui-button</item>
+                    <item name="actions" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.dd_ajax_manage_update_modal.update_dd_ajax_manage_form_loader</item>
+                            <item name="actionName" xsi:type="string">destroyInserted</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.dd_ajax_manage_update_modal</item>
+                            <item name="actionName" xsi:type="string">openModal</item>
+                        </item>
+                        <item name="2" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.dd_ajax_manage_update_modal.update_dd_ajax_manage_form_loader</item>
+                            <item name="actionName" xsi:type="string">render</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <title translate="true">Add New Entity</title>
+                <imports>
+                    <link name="customerId">${ $.provider }:data.customer_id</link>
+                </imports>
+            </settings>
+        </button>
+        <modal name="dd_ajax_manage_update_modal">
+            <settings>
+                <options>
+                    <option name="title" xsi:type="string">Add/Update Entity</option>
+                </options>
+            </settings>
+            <insertForm name="update_dd_ajax_manage_form_loader" component="DecimaDigital_AjaxSimpleUi/js/component/insert-form">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="simpleUiListingProvider" xsi:type="string">ns = dd_ajax_manage_listing, index = dd_ajax_manage_listing</item>
+                        <item name="simpleUiModalProvider" xsi:type="string">${ $.parentName }</item>
+                    </item>
+                </argument>
+                <settings>
+                    <formSubmitType>ajax</formSubmitType>
+                    <renderUrl path="mui/index/render_handle">
+                        <param name="handle">dd_ajax_manage_edit</param>
+                        <param name="buttons">1</param>
+                    </renderUrl>
+                    <loading>false</loading>
+                    <toolbarContainer>${ $.parentName }</toolbarContainer>
+                    <externalProvider>${ $.ns }.dd_ajax_manage_form_data_source</externalProvider>
+                    <ns>dd_ajax_manage_form</ns>
+                    <exports>
+                        <link name="customerId">${ $.externalProvider }:data.customer_id</link>
+                    </exports>
+                    <imports>
+                        <link name="customerId">${ $.provider}:data.customer_id</link>
+                        <link name="onAddressDelete">${ $.ns }.${ $.ns }:deleteAddressAction</link>
+                    </imports>
+                </settings>
+            </insertForm>
+        </modal>
+        <insertListing name="dd_ajax_manage_listing" component="DecimaDigital_AjaxSimpleUi/js/component/insert-listing">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="externalTransfer" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+            <settings>
+                <externalFilterMode>true</externalFilterMode>
+                <externalProvider>dd_ajax_manage_listing.dd_ajax_manage_listing_data_source</externalProvider>
+                <dataLinks>
+                    <exports>false</exports>
+                    <imports>true</imports>
+                </dataLinks>
+                <autoRender>true</autoRender>
+                <ns>dd_ajax_manage_listing</ns>
+                <exports>
+                    <link name="customer_id">${ $.externalProvider }:params.customer_id</link>
+                </exports>
+                <imports>
+                    <link name="customer_id">${ $.provider }:data.customer.entity_id</link>
+                    <link name="onAction">ns = ${ $.ns }, index = actions:action</link>
+                </imports>
+            </settings>
+        </insertListing>
+    </fieldset>
+</form>
