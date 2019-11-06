@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dd_middle_manage_listing_data_source" xsi:type="string">DecimaDigital\MiddleUi\Model\ResourceModel\MiddleUi\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="DecimaDigital\MiddleUi\Model\ResourceModel\MiddleUi\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">dd_simple_ui</argument>
+            <argument name="resourceModel" xsi:type="string">DecimaDigital\SimpleUi\Model\ResourceModel\SimpleUi\Collection</argument>
+        </arguments>
+    </virtualType>
+</config>
