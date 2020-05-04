@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sergey_servicecontract_sc" resource="default" engine="innodb" comment="DD Simple Ui">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="true" nullable="false" identity="true" comment="Simple Ui ID"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="true" comment="Simple Ui Name"/>
+        <column xsi:type="decimal" name="price" comment="Price"/>
+        <column xsi:type="smallint" name="is_active" padding="6" identity="false" nullable="false" comment="Status"/>
+        <column xsi:type="datetime" name="created_at" on_update="false" nullable="true" comment="Created At"/>
+        <column xsi:type="datetime" name="updated_at" on_update="false" nullable="true" comment="Updated At"/>
+        <column xsi:type="text" name="full_description"  nullable="true" comment="Full description"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>
