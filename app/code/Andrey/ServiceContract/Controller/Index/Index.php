@@ -38,3 +38,4 @@ class Index extends Action
         return $this->resultPageFactory->create();
     }
 }
+

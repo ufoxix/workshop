@@ -182,3 +182,4 @@ class AndySc extends AbstractModel implements AndyScInterface
         return $this;
     }
 }
+

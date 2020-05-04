@@ -1,14 +1,22 @@
 <?php
-/** @var $viewModel ServiceContract */
-
-use Andrey\ServiceContract\ViewModel\ServiceContract;
+/** @var $viewModel \Andrey\ServiceContract\ViewModel\ServiceContract */
 
 $viewModel = $block->getViewModel();
 
-$viewModel->scRepository();
+$results =  $viewModel->scRepository();
+
+    echo "<ul>";
+    foreach ($results->getItems() as $result) {
+        echo "<li>" . "Id: " . $result->getId() . "</li>";
+        echo "<li>" . "Name: " . $result->getName() . "</li>";
+        echo "<li>" . "Is Active: " . $result->getIsActive() . "</li>";
+        echo "<li>" . "Created At: " . $result->getCreatedAt() . "</li>";
+        echo "<li>" . "Update At: " . $result->getUpdatedAt() . "</li>";
+        echo "<li>" . "Description: " . $result->getDescription() . "</li>";
+    }
+    echo "</ul>";
+    echo "<br>"
 
 ?>
 
-<h1>
-    Test
-</h1>
+

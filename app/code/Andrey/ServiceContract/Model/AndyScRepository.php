@@ -142,3 +142,4 @@ class AndyScRepository implements AndyScRepositoryInterface
         return $andy;
     }
 }
+

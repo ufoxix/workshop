@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Andrey\ServiceContract\Api;
 
+use Andrey\ServiceContract\Api\Data\AndyScInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Andrey\ServiceContract\Api\Data\AndyScInterface;
-use Magento\Framework\Api\SearchResultsInterface;
 
 /**
  * Interface AndyScRepositoryInterface
@@ -18,7 +18,7 @@ use Magento\Framework\Api\SearchResultsInterface;
 interface AndyScRepositoryInterface
 {
     /**
-     * Load studyPoolId by id
+     * Load andyId by id
      *
      * @param int $studyPoolId
      * @return AndyScInterface
@@ -26,12 +26,12 @@ interface AndyScRepositoryInterface
     public function getById(int $studyPoolId): AndyScInterface;
 
     /**
-     * Save studyPoolEntity data
+     * Save andyEntity data
      *
-     * @param AndyScInterface $studyPoolEntity
+     * @param AndyScInterface $andyEntity
      * @return AndyScInterface
      */
-    public function save(AndyScInterface $studyPoolEntity): AndyScInterface;
+    public function save(AndyScInterface $andyEntity): AndyScInterface;
 
     /**
      * Retrieve List which match a specified criteria.
@@ -42,14 +42,14 @@ interface AndyScRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria): SearchResultsInterface;
 
     /**
-     * Delete studyPoolId by id
+     * Delete andyId by id
      *
-     * @param int $studyPoolId
+     * @param int $andyId
      *
      * @return AndyScInterface
      *
      * @throws NoSuchEntityException
      * @throws CouldNotDeleteException
      */
-    public function deleteById(int $studyPoolId): AndyScInterface;
+    public function deleteById(int $andyId): AndyScInterface;
 }

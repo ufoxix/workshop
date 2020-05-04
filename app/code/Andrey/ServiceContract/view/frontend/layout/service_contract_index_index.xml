@@ -7,7 +7,7 @@
                    name="andy_service_contract"
                    template="Andrey_ServiceContract::service_contract.phtml">
                 <arguments>
-                    <argument name="service_contract_view_model" xsi:type="object">Andrey\ServiceContract\ViewModel\ServiceContract</argument>
+                    <argument name="view_model" xsi:type="object">Andrey\ServiceContract\ViewModel\ServiceContract</argument>
                 </arguments>
             </block>
         </referenceContainer>

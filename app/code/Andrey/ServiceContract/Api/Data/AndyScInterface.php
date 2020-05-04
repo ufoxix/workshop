@@ -110,3 +110,4 @@ interface AndyScInterface
      */
     public function setUpdatedAt(?string $date): void;
 }
+

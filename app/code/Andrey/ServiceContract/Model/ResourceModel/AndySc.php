@@ -23,3 +23,4 @@ class AndySc extends AbstractDb
         $this->_init('andrey_service_contract_sc_table', 'entity_id');
     }
 }
+
