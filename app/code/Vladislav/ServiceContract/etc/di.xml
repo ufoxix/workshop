@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Vladislav\ServiceContract\Api\Data\VladislavScInterface" type="Vladislav\ServiceContract\Model\VladislavSc"/>
+    <preference for="Vladislav\ServiceContract\Api\VladislavScRepositoryInterface" type="Vladislav\ServiceContract\Model\VladislavScRepository"/>
+</config>
