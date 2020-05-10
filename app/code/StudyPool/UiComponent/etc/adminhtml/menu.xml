@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="StudyPool_UiComponent::ui_app" module="StudyPool_UiComponent" resource="StudyPool_UiComponent::ui_app" sortOrder="35" title="Study Ui App" translate="title"/>
+        <add id="StudyPool_UiComponent::ui_apps" title="Study Ui Apps" module="StudyPool_UiComponent" translate="title" parent="StudyPool_UiComponent::ui_app" resource="StudyPool_UiComponent::ui_app"/>
+        <add id="StudyPool_UiComponent::anton_ui_app" title="Study Pool Ui App" module="StudyPool_UiComponent" sortOrder="10" translate="title" action="study_poll_ui/manage" parent="StudyPool_UiComponent::ui_app" resource="StudyPool_UiComponent::ui_app"/>
+    </menu>
+</config>
