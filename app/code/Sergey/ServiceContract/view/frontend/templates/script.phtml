@@ -1,0 +1,9 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var \Sergey\ServiceContract\ViewModel\Test $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+<?php foreach ($viewModel->getItems() as $item): ?>
+    <p><?= $item->getName() . ' - ' . $item->getPrice();?></p>
+<?php endforeach; ?>
