@@ -4,3 +4,4 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Andrey_ServiceContract"/>
 </config>
+
